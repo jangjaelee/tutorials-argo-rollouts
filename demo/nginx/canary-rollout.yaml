@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: nginx-demo
+spec:
+  replicas: 3
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: nginx-demo
+  template:
+    metadata:
+      labels:
+        app: nginx-demo
+    spec:
+      containers:
+      - name: nginx-demo
+        image: argoproj/rollouts-demo:green
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+  strategy:
+    canary:
+      canaryService: nginx-demo-canary
+      stableService: nginx-demo-stable 
+      steps:
+      - setWeight: 30
+      - pause: {duration: 3}
+      - setWeight: 60
+      - pause: {duration: 3}
+      - setWeight: 90
+      - pause: {duration: 3}
+      trafficRouting:
+        nginx:
+          additionalIngressAnnotations:
+            nginx.ingress.kubernetes.io/backend-protocol: HTTP
+          stableIngress: nginx-demo-stable
