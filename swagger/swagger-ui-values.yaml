@@ -15,7 +15,7 @@ swaggerui :
   jsonPath : ""
   jsonUrl : https://raw.githubusercontent.com/argoproj/argo-rollouts/master/pkg/apiclient/rollout/rollout.swagger.json
   server :
-    url: http://argo-rollouts-api.awx.kr
+    url: http://argorollouts.awx.kr
     description: "helm-online"
 
 ## Configure the deployment resource 
@@ -24,8 +24,8 @@ deployment:
   replicas: 1
   jsonNoCheckCertificate: false
   extraEnv:
-  # - name: BASE_URL
-  #   value: /swagger
+  - name: BASE_URL
+    value: /swagger-ui
 
 ## Expose the swagger-ui service and
 ## Provides options for the service so chart users have the full choice
@@ -55,17 +55,17 @@ service:
 ## Configure Ingress based on the documentation here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ##
 ingress:
-  enabled: enable
+  enabled: false
   annotations:
-    - --nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    #- --cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    #- cert-manager.io/cluster-issuer: letsencrypt-prod
   path: /
   hosts:
-    - argo-rollouts-api.awx.kr
+    - argorollouts.awx.kr
   tls: []
   #  - secretName: argorolloutsapi-awx-kr-cert
   #    hosts:
-  #      - argo-rollouts-api.awx.kr
+  #      - argorollouts.awx.kr
 
 ## Configure liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
