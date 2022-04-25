@@ -16,6 +16,6 @@
 ### [**3) Rollouts Specification**](https://github.com/jangjaelee/tutorials-argo-rollouts/wiki/3\)-Rollouts-Specification)
 ### [**4) Canary Deployment using Argo-Rollouts**](https://github.com/jangjaelee/tutorials-argo-rollouts/wiki/4\)-Canary-Deployment-using-Argo-Rollouts)
 ### [**5) Traffic Management with NGINX Ingress Controller**](https://github.com/jangjaelee/tutorials-argo-rollouts/wiki/5\)-Traffic-Management-with-NGINX-Ingress-Controller)
-### [**6) Using the Argo Rollouts as an RESTful API](https://github.com/jangjaelee/tutorials-argo-rollouts/wiki/6\)-Using-the-Argo-Rollouts-as-an-RESTful-API)
+### [**6) Using the Argo Rollouts as an RESTful API**](https://github.com/jangjaelee/tutorials-argo-rollouts/wiki/6\)-Using-the-Argo-Rollouts-as-an-RESTful-API)
 ### 7) How to keep traffic to pod during update (Rollouts Pod Template Hash) [예정]
 ### 8) Automate Canary Analysis [예정]
