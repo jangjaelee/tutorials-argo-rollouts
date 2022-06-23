@@ -2,7 +2,7 @@
 
 ---
 
-2022.04. 이장재    📧 cine0831@gmail.com     📂 [https://github.com/jangjaelee](https://github.com/jangjaelee)
+2022.04. 이장재    📧 cine0831@gmail.com     📂 [https://github.com/jangjaelee](https://github.com/jangjaelee)    📒 [http://www.awx.kr](http://www.awx.kr)
 
 ---
 
